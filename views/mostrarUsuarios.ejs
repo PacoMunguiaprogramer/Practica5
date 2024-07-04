@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://localhost:3000/css/estilosTabla.css">
+	<title>EJERCICIO5</title>
+</head>
+<body>
+	<h1>Personajes historicos </h1>
+	<div class="contenedor">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Celular</th>
+					<th>Correo</th>
+					<th>Editar / Borrar</th>
+				</tr>
+			</thead>
+			<tbody>
+			    <%
+			    usuariosCorrectos.forEach((usuario)=>{
+			    %>
+				<tr>
+					<td><%= usuario.idusuario %></td>
+					<td><%= usuario.nombre %></td>
+					<td><%= usuario.celular %></td>
+					<td><%= usuario.correo %></td>
+					<td>
+						<a href="/editarUsuario/<%= usuario.idusuario %>">Editar / </a>
+						<a href="/borrarUsuario/<%= usuario.idusuario %>">Borrar</a>
+					</td>
+				</tr>
+	            <%
+			    })
+			    %>
+			</tbody>
+		</table>
+</body>
+</html>

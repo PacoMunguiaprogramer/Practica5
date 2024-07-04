@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://localhost:3000/css/estilosTabla.css">
+	<title>EJERCICIO5</title>
+</head>
+<body>
+	<h1>productos </h1>
+	<div class="contenedor">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Descripcion</th>
+					<th>Precio</th>
+					<th>Editar / Borrar</th>
+				</tr>
+			</thead>
+			<tbody>
+			    <%
+			    productosCorrecto.forEach((producto)=>{
+			    %>
+				<tr>
+					<td><%= producto.idproducto %></td>
+					<td><%= producto.nombre %></td>
+					<td><%= producto.descr_prod %></td>
+					<td><%= producto.precio_prod %></td>
+					<td>
+						<a href="/editarProducto/<%= producto.idproducto %>">Editar / </a>
+						<a href="/borrarProducto/<%= producto.idproducto %>">Borrar</a>
+					</td>
+				</tr>
+	            <%
+			    })
+			    %>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
